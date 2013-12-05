@@ -17,6 +17,7 @@ import com.sarxos.aliorapi.AliorSelenium;
 import com.sarxos.aliorapi.entity.BrokerAccount;
 import com.sarxos.aliorapi.entity.BrokerOrder;
 
+
 public class OrdersReceiver extends Receiver {
 
 	/**
@@ -63,7 +64,7 @@ public class OrdersReceiver extends Receiver {
 			List<WebElement> options = select.findElements(By.tagName("option"));
 			for (WebElement option : options) {
 				if (option.getText().equals(opt)) {
-					option.setSelected();
+					option.click();
 					break;
 				}
 			}
@@ -133,7 +134,7 @@ public class OrdersReceiver extends Receiver {
 				click(link);
 			}
 			waitForAMoment();
-			By by = By.xpath("//h1[text()='Zlecenia bie¿¹ce']");
+			By by = By.xpath("//h1[text()='Zlecenia bieï¿½ï¿½ce']");
 			try {
 				driver.findElement(by);
 				break;
@@ -160,7 +161,7 @@ public class OrdersReceiver extends Receiver {
 				selenium.getEval("onCibGridActionClick(\"DETAILS\", \"" + i + "\", undefined);");
 				waitForAMoment();
 				waitForAMoment();
-				By by = By.xpath("//h1[text()='Szczegó³y zlecenia']");
+				By by = By.xpath("//h1[text()='Szczegï¿½y zlecenia']");
 				try {
 					driver.findElement(by);
 					break;

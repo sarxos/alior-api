@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.sarxos.aliorapi.AliorClient;
 import com.sarxos.aliorapi.AliorClientException;
 import com.sarxos.aliorapi.entity.MoneyAccount;
+import com.sarxos.aliorapi.util.AliorUtils;
 
 
 /**
@@ -36,6 +37,8 @@ public class MoneyAccountsReceiver {
 
 		driver.navigate().to(AliorClient.INDEX_URL);
 
+		AliorUtils.waitForDialogDisappear(driver, 5);
+
 		int max = 5;
 		int attempts = 0;
 
@@ -54,6 +57,7 @@ public class MoneyAccountsReceiver {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
 					LOG.error("Interrupt exception", e);
+					throw new RuntimeException(e);
 				}
 			}
 		} while (attempts++ < max);
@@ -82,7 +86,7 @@ public class MoneyAccountsReceiver {
 		} while (attempts++ < max);
 
 		if (table == null) {
-			throw new AliorClientException("Cannot find grid table");
+			throw new AliorClientException("Cannot accounts grid table");
 		}
 
 		// parse all grid rows
@@ -121,9 +125,7 @@ public class MoneyAccountsReceiver {
 					// account number and role
 					String[] num_role = td.getText().split("\n");
 					if (num_role.length != 2) {
-						throw new AliorClientException(
-							"Account number/role pair length is " + num_role.length +
-							" instead of 2");
+						throw new AliorClientException("Account number/role pair length is " + num_role.length + " instead of 2");
 					}
 					String number = num_role[0].trim().replaceAll("\\s", "");
 					String role = num_role[1].trim().split(":")[1];
@@ -133,16 +135,23 @@ public class MoneyAccountsReceiver {
 					break;
 
 				case 2:
-					String[] name_type = td.getText().split("\n");
-					if (name_type.length != 2) {
-						throw new AliorClientException(
-							"Account name/type pair length is " + name_type.length +
-							" instead of 2");
+
+					WebElement span = td.findElement(By.tagName("span"));
+
+					String name = null;
+
+					WebElement b = null;
+					try {
+						b = span.findElement(By.tagName("b"));
+						name = b.getText();
+					} catch (NoSuchElementException e) {
+						name = "(no name)";
 					}
-					String name = name_type[0].trim();
-					String type = name_type[1].trim();
-					account.setName(name);
-					account.setType(type);
+
+					String type = span.getText().substring(name.length());
+
+					account.setName(name.replaceAll("\\s", ""));
+					account.setType(type.replaceAll("\\s", ""));
 					break;
 
 				case 3:

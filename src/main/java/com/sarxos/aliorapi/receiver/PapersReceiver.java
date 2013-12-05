@@ -16,6 +16,7 @@ import com.sarxos.aliorapi.AliorClientException;
 import com.sarxos.aliorapi.entity.BrokerAccount;
 import com.sarxos.aliorapi.entity.BrokerPaper;
 
+
 public class PapersReceiver extends Receiver {
 
 	/**
@@ -58,7 +59,7 @@ public class PapersReceiver extends Receiver {
 			List<WebElement> options = select.findElements(By.tagName("option"));
 			for (WebElement option : options) {
 				if (option.getText().equals(opt)) {
-					option.setSelected();
+					option.click();
 					break;
 				}
 			}
@@ -123,74 +124,74 @@ public class PapersReceiver extends Receiver {
 		for (int i = 0; i < tds.size(); i++) {
 			WebElement td = tds.get(i);
 			switch (i) {
-			case 0:
-				// name
-				String name = td.getText().trim();
-				paper = new BrokerPaper(name);
-				break;
+				case 0:
+					// name
+					String name = td.getText().trim();
+					paper = new BrokerPaper(name);
+					break;
 
-			case 1:
-				// buy/sell
-				break;
+				case 1:
+					// buy/sell
+					break;
 
-			case 2:
-				// available quantity
-				int aq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
-				paper.setAvailableQuantity(aq);
-				break;
+				case 2:
+					// available quantity
+					int aq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
+					paper.setAvailableQuantity(aq);
+					break;
 
-			case 3:
-				// blocked quantity
-				int bq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
-				paper.setLockedQuantity(bq);
-				break;
+				case 3:
+					// blocked quantity
+					int bq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
+					paper.setLockedQuantity(bq);
+					break;
 
-			case 4:
-				// other blocked quantity
-				int obq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
-				paper.setOtherLockedQuantity(obq);
-				break;
+				case 4:
+					// other blocked quantity
+					int obq = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
+					paper.setOtherLockedQuantity(obq);
+					break;
 
-			case 5:
-				// kdwp
-				int kdwp = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
-				paper.setKDWP(kdwp);
-				break;
+				case 5:
+					// kdwp
+					int kdwp = Integer.parseInt(td.getText().trim().replaceAll("\\s", ""));
+					paper.setKDWP(kdwp);
+					break;
 
-			case 6:
-				// price
-				String p = td.getText().trim().replaceAll("PLN", "");
-				p = p.replaceAll("\\s", "");
-				p = p.replaceAll(",", ".");
-				double price = Double.parseDouble(p);
-				paper.setPrice(price);
-				break;
+				case 6:
+					// price
+					String p = td.getText().trim().replaceAll("PLN", "");
+					p = p.replaceAll("\\s", "");
+					p = p.replaceAll(",", ".");
+					double price = Double.parseDouble(p);
+					paper.setPrice(price);
+					break;
 
-			case 7:
-				// date
-				String d = td.getText().trim();
-				if (d.length() > 0) {
-					Date date = null;
-					try {
-						date = DATE_FORMAT.parse(d);
-					} catch (ParseException e) {
-						LOG.error("Cannot parse date '" + d + "'");
+				case 7:
+					// date
+					String d = td.getText().trim();
+					if (d.length() > 0) {
+						Date date = null;
+						try {
+							date = DATE_FORMAT.parse(d);
+						} catch (ParseException e) {
+							LOG.error("Cannot parse date '" + d + "'");
+						}
+						paper.setDate(date);
 					}
-					paper.setDate(date);
-				}
-				break;
+					break;
 
-			case 8:
-				// evaluation
-				String ev = td.getText().trim();
-				if (ev.length() > 0) {
-					ev = ev.replaceAll("PLN", "");
-					ev = ev.replaceAll("\\s", "");
-					ev = ev.replaceAll(",", ".");
-					double eval = Double.parseDouble(ev);
-					paper.setEvaluation(eval);
-				}
-				break;
+				case 8:
+					// evaluation
+					String ev = td.getText().trim();
+					if (ev.length() > 0) {
+						ev = ev.replaceAll("PLN", "");
+						ev = ev.replaceAll("\\s", "");
+						ev = ev.replaceAll(",", ".");
+						double eval = Double.parseDouble(ev);
+						paper.setEvaluation(eval);
+					}
+					break;
 			}
 		}
 

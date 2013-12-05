@@ -19,6 +19,7 @@ import com.sarxos.aliorapi.receiver.MoneyAccountsReceiver;
 import com.sarxos.aliorapi.receiver.OrdersReceiver;
 import com.sarxos.aliorapi.receiver.PapersReceiver;
 
+
 /**
  * Main Alior API class.
  * 
@@ -39,7 +40,7 @@ public class AliorClient {
 	/**
 	 * Alior auth URL address
 	 */
-	public static final String AUTH_URL = "https://aliorbank.pl/hades/do/Authorization";
+	public static final String AUTH_URL = "https://aliorbank.pl/hades/do/BANKLOGIN";
 
 	/**
 	 * Main account page
@@ -86,13 +87,10 @@ public class AliorClient {
 	/**
 	 * Login to the Alior profile.
 	 * 
-	 * @param uid
-	 *            - user ID
-	 * @param passwd
-	 *            - user password
+	 * @param uid - user ID
+	 * @param passwd - user password
 	 * @return true if user has been logged in, false otherwise
-	 * @throws AliorClientException
-	 *             when client is already logged in
+	 * @throws AliorClientException when client is already logged in
 	 */
 	public boolean login(String uid, String passwd) throws AliorClientException {
 
@@ -168,8 +166,7 @@ public class AliorClient {
 	 * Logout client.
 	 * 
 	 * @return true
-	 * @throws AliorClientException
-	 *             when client is not logged in
+	 * @throws AliorClientException when client is not logged in
 	 */
 	public boolean logout() throws AliorClientException {
 		if (!loggedIn) {
@@ -200,8 +197,7 @@ public class AliorClient {
 	/**
 	 * Check if client is logged in. Throw exception if not.
 	 * 
-	 * @throws AliorClientException
-	 *             if client is not logged in
+	 * @throws AliorClientException if client is not logged in
 	 */
 	private void checkLogin() throws AliorClientException {
 		if (!loggedIn) {
@@ -213,8 +209,7 @@ public class AliorClient {
 	 * Get all money accounts from Alior bank profile.
 	 * 
 	 * @return List of all money accounts within Alior profile
-	 * @throws AliorClientException
-	 *             oops!
+	 * @throws AliorClientException oops!
 	 */
 	public List<MoneyAccount> getMoneyAccounts() throws AliorClientException {
 		checkLogin();
@@ -225,8 +220,7 @@ public class AliorClient {
 	 * Get all broker accounts from Alior bank profile.
 	 * 
 	 * @return List of all broker account within Alior profile
-	 * @throws AliorClientException
-	 *             oops!
+	 * @throws AliorClientException oops!
 	 */
 	public List<BrokerAccount> getBrokerAccounts() throws AliorClientException {
 		checkLogin();
@@ -236,8 +230,7 @@ public class AliorClient {
 	/**
 	 * Get list of securities on given broker account.
 	 * 
-	 * @param account
-	 *            - broker account to check
+	 * @param account - broker account to check
 	 * @return List of papers on the broker account
 	 * @throws AliorClientException
 	 */
@@ -249,11 +242,9 @@ public class AliorClient {
 	/**
 	 * Return all orders from broker account.
 	 * 
-	 * @param account
-	 *            - broker account
+	 * @param account - broker account
 	 * @return List of all broker orders from given account
-	 * @throws AliorClientException
-	 *             oops!
+	 * @throws AliorClientException oops!
 	 */
 	public List<BrokerOrder> getOrders(BrokerAccount account) throws AliorClientException {
 		checkLogin();
