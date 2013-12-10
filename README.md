@@ -14,17 +14,16 @@ bronię nikomu zrobić tego swoim własnym sumptem.
 ## UWAGA!
 
 Każdy kto ma zamiar uzyć to API musi mieć świadomość, że może to byc niezgodne z 
-regulaminem, który posiadacz konta akceptuje przy podpisywaniu umowy. Nie daję ŻADNEJ
-gwarancji, że API będzie działało poprawnie oraz nie biorę absolutnie żadnej 
-odpowiedzialność za ewentualne szkody powstałe w wyniku użycia tego API. Jeśli chcesz
-go uzywać, proszę bardzo, ale wiedz, że robisz to 
-**NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!**
+regulaminem, który posiadacz konta Alior Banku akceptuje przy podpisywaniu umowy.
+Nie daję ŻADNEJ gwarancji, że API będzie działało poprawnie, oraz nie biorę absolutnie
+ŻADNEJ odpowiedzialność za ewentualne szkody powstałe w wyniku jego użycia. Jeśli chcesz
+go używać, proszę bardzo, ale wiedz, że robisz to **NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!**
 
 ## Ficzery
 
 1. Pobranie listy rachunków pieniężnych.
 2. Pobranie listy rachunków maklerskich.
- * Pobranie listy papierów wartościowych w ramach rachunku maklerskiego.
+ * Pobranie listy papierów wartościowych.
  * Pobranie listy aktywnych zleceń.
  * Modyfikacja aktywnego zlecenia.
 
@@ -35,15 +34,15 @@ W poniższych przykładach należy zamienić ```<cid>``` na własny numer klient
 
 ```java
 
-	public static void main2(String[] args) throws AliorClientException {
-		AliorClient alior = new AliorClient(FirefoxDriver.class);
-		alior.login("<cid>", "<password>");
-		List<MoneyAccount> accounts = alior.getMoneyAccounts();
-		for (MoneyAccount ma : accounts) {
-			System.out.println(ma);
-		}
-		alior.close();
+public static void main2(String[] args) throws AliorClientException {
+	AliorClient alior = new AliorClient(FirefoxDriver.class);
+	alior.login("<cid>", "<password>");
+	List<MoneyAccount> accounts = alior.getMoneyAccounts();
+	for (MoneyAccount ma : accounts) {
+		System.out.println(ma);
 	}
+	alior.close();
+}
 ```
 
 ## Licencja
