@@ -7,6 +7,15 @@ Nie wnikam w przyczyny, może wydaje im się, że nie da im to profitów, ale gd
 zmienili zdanie, to niech wiedzą, że bardzo chętnie pomogę im takie rozwiązanie
 stworzyć :)
 
+## UWAGA!
+
+Każdy kto ma zamiar użyć to API do własnych celów musi mieć świadomość, że może to
+być potencjalnie niezgodne z  regulaminem, który posiadacz konta Alior Banku
+akceptuje przy podpisywaniu umowy. Nie daję ŻADNEJ gwarancji, że API będzie działało
+poprawnie, oraz nie biorę absolutnie ŻADNEJ odpowiedzialność za ewentualne szkody 
+powstałe w wyniku jego użycia. Jeśli chcesz go używać, proszę bardzo, ale wiedz, 
+że robisz to **NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!**
+
 ## Opis
 
 Jest to bardzo prymitywne API napisane w celu uzyskania zautomatyzowanego dostępu do 
@@ -19,14 +28,6 @@ API jest w fazie developmentu, co oznacza ni mniej ni więcej, że nie będę na
 jednak nie bronię nikomu zrobić tego w swoim własnym zakresie - wystarczy sforkować
 repozytorium. Każdemu chętnemu życzę powodzenia będąc jednocześnie otwartym na
 zwrotne pull requesty.
-
-## UWAGA!
-
-Każdy kto ma zamiar uzyć to API musi mieć świadomość, że może to byc niezgodne z 
-regulaminem, który posiadacz konta Alior Banku akceptuje przy podpisywaniu umowy.
-Nie daję ŻADNEJ gwarancji, że API będzie działało poprawnie, oraz nie biorę absolutnie
-ŻADNEJ odpowiedzialność za ewentualne szkody powstałe w wyniku jego użycia. Jeśli chcesz
-go używać, proszę bardzo, ale wiedz, że robisz to **NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!**
 
 ## Ficzery
 
