@@ -24,9 +24,9 @@ NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!
 
 1. Pobranie listy rachunków pieniężnych.
 2. Pobranie listy rachunków maklerskich.
- ** Pobranie listy papierów wartościowych w ramach rachunku maklerskiego.
- ** Pobranie listy aktywnych zleceń.
- ** Modyfikacja aktywnego zlecenia.
+ * Pobranie listy papierów wartościowych w ramach rachunku maklerskiego.
+ * Pobranie listy aktywnych zleceń.
+ * Modyfikacja aktywnego zlecenia.
 
 ## Przykłady
 
