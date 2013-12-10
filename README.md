@@ -59,7 +59,7 @@ public static void main2(String[] args) throws AliorClientException {
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Bartosz Firyn
+Copyright (c) 2011 - 2013 Bartosz Firyn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
