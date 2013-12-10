@@ -1,8 +1,8 @@
 # Alior API
 
-API do systemu internetowego Alior Banku. API to powstało ponieważ, przynajmniej 
-oficjalnie, Alior Bank nie zamierzają takowej funkcjonalności implementować 
-(informacje taką uzyskałem na ich infolini oraz mailowo przez panel wiadomości).
+API to powstało ponieważ, przynajmniej oficjalnie, Alior Bank nie zamierza takowej
+funkcjonalności implementować (lub udostępniać o ile takową już posiada), informacje
+taką uzyskałem na ich infolini oraz mailowo przez panel wiadomości.
 Nie wnikam w przyczyny, może wydaje im się, że nie da im to profitów, ale gdyby
 zmienili zdanie, to niech wiedzą, że bardzo chętnie pomogę im takie rozwiązanie
 stworzyć :)
