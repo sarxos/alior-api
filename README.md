@@ -1,15 +1,24 @@
 # Alior API
 
-API do systemu online Alior Banku.
+API do systemu internetowego Alior Banku. API to powstało ponieważ, przynajmniej 
+oficjalnie, Alior Bank nie zamierzają takowej funkcjonalności implementować 
+(informacje taką uzyskałem na ich infolini oraz mailowo przez panel wiadomości).
+Nie wnikam w przyczyny, może wydaje im się, że nie da im to profitów, ale gdyby
+zmienili zdanie, to niech wiedzą, że bardzo chętnie pomogę im takie rozwiązanie
+stworzyć :)
 
 ## Opis
 
 Jest to bardzo prymitywne API napisane w celu uzyskania zautomatyzowanego dostępu do 
-panelu klienta w systemie internetowym Alior Banku. API to działa w oparciu o silnik
-Selenium, który otwiera sesję w przeglądarce, następnie po prostu klika na co trzeba.
+panelu klienta w systemie internetowym Alior Banku. API to działa w oparciu o framework
+Selenium, który otwiera sesję w przeglądarce, następnie po prostu klika na co trzeba
+wykonując po drodze ekstrakcję danych z warstwy widoku.
+
 API jest w fazie developmentu, co oznacza ni mniej ni więcej, że nie będę naprawiał 
-żadnych zgłoszonych błędów i nie będę implementował dodatkowych ficzerów, ale nie 
-bronię nikomu zrobić tego swoim własnym sumptem.
+żadnych zgłoszonych bugów i nie będę implementował żadnych dodatkowych ficzerów, 
+jednak nie bronię nikomu zrobić tego w swoim własnym zakresie - wystarczy sforkować
+repozytorium. Każdemu chętnemu życzę powodzenia będąc jednocześnie otwartym na
+zwrotne pull requesty.
 
 ## UWAGA!
 
