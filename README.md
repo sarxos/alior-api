@@ -18,7 +18,7 @@ regulaminem, który posiadacz konta akceptuje przy podpisywaniu umowy. Nie daję
 gwarancji, że API będzie działało poprawnie oraz nie biorę absolutnie żadnej 
 odpowiedzialność za ewentualne szkody powstałe w wyniku użycia tego API. Jeśli chcesz
 go uzywać, proszę bardzo, ale wiedz, że robisz to 
-NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!
+**NA SWOJĄ WŁASNĄ ODPOWIEDZIALNOŚĆ!**
 
 ## Ficzery
 
@@ -36,8 +36,6 @@ W poniższych przykładach należy zamienić ```<cid>``` na własny numer klient
 ```java
 
 	public static void main2(String[] args) throws AliorClientException {
-
-		// AliorClient alior = new AliorClient(HtmlUnitDriver.class);
 		AliorClient alior = new AliorClient(FirefoxDriver.class);
 		alior.login("<cid>", "<password>");
 		List<MoneyAccount> accounts = alior.getMoneyAccounts();
